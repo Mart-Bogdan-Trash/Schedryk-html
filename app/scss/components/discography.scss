@@ -20,6 +20,13 @@
     transition: $transition;
     position: relative;
 
+    img {
+        object-fit: cover;
+        object-position: center;
+        -o-object-fit: cover;
+        -o-object-position: center;
+    }
+
     &__toggler {
         position: absolute;
         right: 32px;
