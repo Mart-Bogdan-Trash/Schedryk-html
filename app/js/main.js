@@ -1,7 +1,6 @@
 $(".burger").on('click',function(){
   document.querySelector(".nav").classList.toggle("show");
   document.querySelector(".burger").classList.toggle("burger-active");
-  document.querySelector(".dropdown").classList.toggle("dropdown-active");
 });
 
 
@@ -77,7 +76,7 @@ $('.main-info').slick({
     dots: true,
     infinite: true,
     speed: 300,
-    autoplay: true,
+    //autoplay: true,
     autoplaySpeed: 3000,
     slidesToShow: 1,
     adaptiveHeight: true,

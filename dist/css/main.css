@@ -80,6 +80,11 @@ table {
   margin-bottom: 12px;
   transition: 0.2s;
   position: relative; }
+  .discography__item img {
+    object-fit: cover;
+    object-position: center;
+    -o-object-fit: cover;
+    -o-object-position: center; }
   .discography__item__toggler {
     position: absolute;
     right: 32px;
@@ -331,17 +336,14 @@ audio {
     opacity: 0; }
   100% {
     opacity: 1; } }
-  .header .dropdown-active {
-    display: block !important;
-    position: absolute; }
   .header .show {
     display: block !important;
     position: absolute;
     top: 98px;
     background-color: white;
     right: 0;
-    width: 40%;
-    height: 400%;
+    width: 100%;
+    height: 100vh;
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12); }
     .header .show .menu1 {
       flex-direction: column; }
@@ -1439,7 +1441,9 @@ audio {
   font-family: 'Gilroy';
   background: white;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
-  padding: 40px; }
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto; }
   .form-wrap .form input[type="submit"] {
     margin-top: 28px; }
   .form-wrap .form__text {
@@ -1447,8 +1451,9 @@ audio {
   .form-wrap .form__title {
     font-weight: 700;
     color: #000000;
-    font-size: 18px;
-    margin-bottom: 28px; }
+    font-size: 20px;
+    margin-bottom: 28px;
+    line-height: 140%; }
   .form-wrap .form__label {
     display: flex;
     flex-direction: column;
@@ -1477,7 +1482,6 @@ audio {
     display: block;
     margin: 0 auto; }
   .form-wrap .form__label__input {
-    border-radius: 5px;
     height: 30px;
     background-color: #F0F0F0;
     padding: 8px;
@@ -1555,8 +1559,6 @@ audio {
     flex-direction: column; }
   .header .nav {
     display: none; }
-  .header .dropdown {
-    display: none; }
   .header .burger {
     margin-right: 40px;
     display: block; }
@@ -1601,6 +1603,23 @@ audio {
       width: 50%; } }
 
 @media only screen and (max-width: 768px) {
+  .main-header {
+    top: -40px; }
+  .header .show ul {
+    height: 80vh; }
+    .header .show ul li {
+      position: relative; }
+      .header .show ul li::after {
+        position: absolute;
+        content: '';
+        width: 80vw;
+        height: 2px;
+        bottom: -30px;
+        left: 50%;
+        transform: translate(-50%);
+        background: #848181; }
+      .header .show ul li:last-child::after {
+        display: none; }
   .about-press .press-slider__card blockquote {
     width: 90%;
     margin: 0 auto; }
@@ -1618,7 +1637,7 @@ audio {
     margin-left: 0; }
   .main-about {
     padding: 20px 0 10px;
-    bottom: 0px; }
+    bottom: -20px; }
   .about-press {
     padding: 20px 0; }
   .about-press .container {
@@ -1641,8 +1660,46 @@ audio {
     max-width: 550px; } }
 
 @media only screen and (max-width: 576px) {
+  .bg-right {
+    background-image: none; }
+  .about-main__subtitle {
+    font-size: 20px; }
+  .award .awards__title {
+    font-size: 55px; }
+  .about-details .festival li {
+    font-size: 16px; }
+  .about-main__text {
+    font-size: 16px; }
+  .main {
+    padding-top: 80px;
+    padding-bottom: 20px; }
+  .section-title {
+    font-size: 30px; }
+  .award .awards__text {
+    font-size: 18px; }
+  .article__title {
+    font-size: 20px; }
+  .article__text {
+    font-size: 18px; }
+  .main.year {
+    margin-right: -50px; }
+  .main .year span {
+    font-size: 20px;
+    text-align: center; }
   .main-header {
+    top: -50px; }
+    .main-header .main__subtitle {
+      font-size: 18px;
+      position: absolute;
+      margin-left: -40px; }
+    .main-header .main__title {
+      font-size: 25px;
+      margin-right: -80px; }
+  .main-about .main__text {
     display: none; }
+  .main-about .btn-about {
+    margin-bottom: 40px;
+    margin-left: 20px; }
   .about-famous .slick-prev {
     display: none !important; }
   .about-famous .slick-next {
@@ -1658,6 +1715,10 @@ audio {
       margin-bottom: 20px; } }
 
 @media only screen and (max-width: 480px) {
+  .about-famous .slick-slide.slick-current.slick-active.slick-center .famous-text {
+    font-size: 10px; }
+  .header .burger {
+    margin-right: 20px; }
   .about-details .festival {
     padding: initial; }
   .about-press .container {
@@ -1677,16 +1738,36 @@ audio {
     right: -75px; } }
 
 @media only screen and (max-width: 380px) {
+  .main .year {
+    margin-right: -10px; }
+  .main-header .main__title {
+    margin-right: -60px; }
+  .form-wrap .form__title {
+    font-size: 18px; }
+  .main-header {
+    top: -80px; }
+  .main-about {
+    bottom: 0; }
+    .main-about .btn-about {
+      font-size: 18px; }
+  .main {
+    padding-bottom: 20px;
+    padding-top: 80px; }
   main {
-    padding-top: 200px; }
+    padding-top: 140px; }
+  .header .container {
+    padding: 0 10px; }
   .header-wrap {
-    justify-content: flex-end;
-    flex-direction: column; }
+    flex-wrap: wrap; }
+    .header-wrap .logo {
+      width: 100px;
+      height: 100px; }
+      .header-wrap .logo a {
+        display: flex; }
   .logo {
     margin-bottom: 10px; }
   .burger {
-    margin-right: 0px !important;
-    margin-top: 10px; }
+    margin-right: 0px !important; }
   body {
     min-width: 320px; }
   .community-page .community-wrap a {
